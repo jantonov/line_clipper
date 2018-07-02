@@ -5,8 +5,8 @@
 # Basics: throughout this code a point in 2D/3D is a pair/tripple of float numbers.
 # A line segment is an ordered pair of 2D/3D points.
 # The function clipping() will take as arguments a line segment l, an ordered list of points F and a float number h.  The list 
-# F should represent the vertices of a (not-necessarily convex) polygon in 3D.  clipping() will excise the parts of the image of l under the perspective projection through C=(0,0,0) on the view plane
-# z=h which are hidden from view w.r.t. C due to obstruction of visibility caused by F, and will return the list of segments which correspond to the unoccluded parts of l.
+# F should represent the ordered vertices of a (not-necessarily convex) polygon in 3D.  clipping() will excise the parts of the image of l under the perspective projection through C=(0,0,0) on the view plane
+# z=h which are hidden from view w.r.t. C due to obstruction of visibility caused by the opaque F, and will return the list of segments which correspond to visible parts of l.
 # The function will not clip l if F is not contained in a unique affine plane in 3D (i.e. if F is colinear or a point, or if F spans a 3-dimensional polytope).
 #CAUTION: Make sure that l lies above the image plane and that l does not intersect F!  Intersections with the affine plane supporting F is OK and is handled by the current version of the function.
 #CAUTION: The case when the perspective projection of l intersects the perspective projection of F nontransversally is not handled. This is left for version 2.0.
